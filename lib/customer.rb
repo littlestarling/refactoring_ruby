@@ -17,8 +17,6 @@ class Customer
     result = "Rental Record for #{@name}\n"
 
     @rentals.each do |element|
-      this_amount = element.charge
-
       # レンタルポイントを加算
       frequent_renter_points += 1
 
@@ -28,9 +26,9 @@ class Customer
       end
 
       # このレンタルの料金を表示
-      result += "\t" + element.movie.title + "\t" + this_amount.to_s + "\t"
+      result += "\t" + element.movie.title + "\t" + element.charge.to_s + "\t"
 
-      total_amount += this_amount
+      total_amount += element.charge
     end
 
     # フッター行を作成
