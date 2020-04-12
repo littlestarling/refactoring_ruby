@@ -26,11 +26,13 @@ class Customer
     result
   end
 
-  def total_charge
-    @rentals.inject(0) { |sum, rental| sum + rental.charge }
-  end
+  private
 
   def total_frequent_renter_points
     @rentals.inject(0) { |sum, rental| sum + rental.frequent_renter_points }
+  end
+
+  def total_charge
+    @rentals.inject(0) { |sum, rental| sum + rental.charge }
   end
 end
