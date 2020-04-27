@@ -12,6 +12,6 @@ class Rental
   end
 
   def frequent_renter_points
-    (element.movice.price_code == Movie::NEW_RELEASE && element.days_rented > 1) ? 2 : 1
+    movie.frequent_renter_points(days_rented)
   end
 end
