@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+
+def print_owing(amount)
+  print_banner
+  puts "name: #{@name}"
+  puts "amount: #{amount}"
+end
+
