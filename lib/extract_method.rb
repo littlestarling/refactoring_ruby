@@ -1,11 +1,19 @@
 # frozen_string_literal: true
 
-def print_owing(amount)
-  print_banner
-  print_details amount
-end
+def print_owing
+  outstanding = 0.0
 
-def print_details(amount)
+  # バナーを出力( print banner )
+  puts "*************************"
+  puts "***** Customer Owes *****"
+  puts "*************************"
+
+  # 勘定を計算 ( calculate outstanding )
+  @orders.each do |order|
+    outstanding += order.amount
+  end
+
+  # 詳細を表示 ( print details )
   puts "name: #{@name}"
-  puts "amount: #{amount}"
+  puts "amount: #{outstanding}"
 end
